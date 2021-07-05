@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -40,7 +40,7 @@ class TestEditorGetInfoApi(TestContext):
         request = GetInfoRequest(TestFile.not_exist().ToFileInfo())
         with self.assertRaises(ApiException) as context:
             self.info_api.get_info(request)
-        self.assertEqual("Can't find file located at 'somefolder\\not-exist.docx'.", context.exception.message["message"])
+        self.assertEqual("Can't find file located at 'somefolder\\not-exist.docx'.", context.exception.message)
 
     def test_get_info(self):
         request = GetInfoRequest(TestFile.password_protected_docx().ToFileInfo())
