@@ -1,7 +1,7 @@
 # coding: utf-8
 
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose Pty Ltd" file="SpreadsheetLoadOptions.py">
+# <copyright company="Aspose Pty Ltd" file="ConsumptionResult.py">
 #   Copyright (c) 2003-2022 Aspose Pty Ltd
 # </copyright>
 # <summary>
@@ -30,11 +30,9 @@ import re  # noqa: F401
 
 import six
 
-from groupdocs_editor_cloud.models import LoadOptions
-
-class SpreadsheetLoadOptions(LoadOptions):
+class ConsumptionResult(object):
     """
-    Allows to specify custom options for editing documents of all supportable Spreadsheet (Excel-compatible) formats
+    Metered license consumption information
     """
 
     """
@@ -45,83 +43,77 @@ class SpreadsheetLoadOptions(LoadOptions):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'worksheet_index': 'int',
-        'exclude_hidden_worksheets': 'bool'
+        'credit': 'float',
+        'quantity': 'float'
     }
 
     attribute_map = {
-        'worksheet_index': 'WorksheetIndex',
-        'exclude_hidden_worksheets': 'ExcludeHiddenWorksheets'
+        'credit': 'Credit',
+        'quantity': 'Quantity'
     }
 
-    def __init__(self, worksheet_index=None, exclude_hidden_worksheets=None, **kwargs):  # noqa: E501
-        """Initializes new instance of SpreadsheetLoadOptions"""  # noqa: E501
+    def __init__(self, credit=None, quantity=None, **kwargs):  # noqa: E501
+        """Initializes new instance of ConsumptionResult"""  # noqa: E501
 
-        self._worksheet_index = None
-        self._exclude_hidden_worksheets = None
+        self._credit = None
+        self._quantity = None
 
-        if worksheet_index is not None:
-            self.worksheet_index = worksheet_index
-        if exclude_hidden_worksheets is not None:
-            self.exclude_hidden_worksheets = exclude_hidden_worksheets
-
-        base = super(SpreadsheetLoadOptions, self)
-        base.__init__(**kwargs)
-
-        self.swagger_types.update(base.swagger_types)
-        self.attribute_map.update(base.attribute_map)
+        if credit is not None:
+            self.credit = credit
+        if quantity is not None:
+            self.quantity = quantity
     
     @property
-    def worksheet_index(self):
+    def credit(self):
         """
-        Gets the worksheet_index.  # noqa: E501
+        Gets the credit.  # noqa: E501
 
-        Allows to specify the 0-based index of the worksheet (tab) of the input Spreadsheet document, which should be converted to the HTML.  # noqa: E501
+        Amount of used credits  # noqa: E501
 
-        :return: The worksheet_index.  # noqa: E501
-        :rtype: int
+        :return: The credit.  # noqa: E501
+        :rtype: float
         """
-        return self._worksheet_index
+        return self._credit
 
-    @worksheet_index.setter
-    def worksheet_index(self, worksheet_index):
+    @credit.setter
+    def credit(self, credit):
         """
-        Sets the worksheet_index.
+        Sets the credit.
 
-        Allows to specify the 0-based index of the worksheet (tab) of the input Spreadsheet document, which should be converted to the HTML.  # noqa: E501
+        Amount of used credits  # noqa: E501
 
-        :param worksheet_index: The worksheet_index.  # noqa: E501
-        :type: int
+        :param credit: The credit.  # noqa: E501
+        :type: float
         """
-        if worksheet_index is None:
-            raise ValueError("Invalid value for `worksheet_index`, must not be `None`")  # noqa: E501
-        self._worksheet_index = worksheet_index
+        if credit is None:
+            raise ValueError("Invalid value for `credit`, must not be `None`")  # noqa: E501
+        self._credit = credit
     
     @property
-    def exclude_hidden_worksheets(self):
+    def quantity(self):
         """
-        Gets the exclude_hidden_worksheets.  # noqa: E501
+        Gets the quantity.  # noqa: E501
 
-        Allows to exclude hidden worksheets in the input Spreadsheet document, so they will be totally ignored. Default is false - hidden worksheets are available and processed as normal.  # noqa: E501
+        Amount of MBs processed  # noqa: E501
 
-        :return: The exclude_hidden_worksheets.  # noqa: E501
-        :rtype: bool
+        :return: The quantity.  # noqa: E501
+        :rtype: float
         """
-        return self._exclude_hidden_worksheets
+        return self._quantity
 
-    @exclude_hidden_worksheets.setter
-    def exclude_hidden_worksheets(self, exclude_hidden_worksheets):
+    @quantity.setter
+    def quantity(self, quantity):
         """
-        Sets the exclude_hidden_worksheets.
+        Sets the quantity.
 
-        Allows to exclude hidden worksheets in the input Spreadsheet document, so they will be totally ignored. Default is false - hidden worksheets are available and processed as normal.  # noqa: E501
+        Amount of MBs processed  # noqa: E501
 
-        :param exclude_hidden_worksheets: The exclude_hidden_worksheets.  # noqa: E501
-        :type: bool
+        :param quantity: The quantity.  # noqa: E501
+        :type: float
         """
-        if exclude_hidden_worksheets is None:
-            raise ValueError("Invalid value for `exclude_hidden_worksheets`, must not be `None`")  # noqa: E501
-        self._exclude_hidden_worksheets = exclude_hidden_worksheets
+        if quantity is None:
+            raise ValueError("Invalid value for `quantity`, must not be `None`")  # noqa: E501
+        self._quantity = quantity
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -157,7 +149,7 @@ class SpreadsheetLoadOptions(LoadOptions):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, SpreadsheetLoadOptions):
+        if not isinstance(other, ConsumptionResult):
             return False
 
         return self.__dict__ == other.__dict__

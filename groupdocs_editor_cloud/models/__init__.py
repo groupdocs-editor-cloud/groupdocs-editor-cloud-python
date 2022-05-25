@@ -4,6 +4,7 @@
 from __future__ import absolute_import
 
 # import models
+from groupdocs_editor_cloud.models.consumption_result import ConsumptionResult
 from groupdocs_editor_cloud.models.disc_usage import DiscUsage
 from groupdocs_editor_cloud.models.document_result import DocumentResult
 from groupdocs_editor_cloud.models.error import Error
